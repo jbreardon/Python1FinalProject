@@ -31,15 +31,11 @@ class eCard:
         eCard.title("E-Card Generator") # Window title
 
         # Set canvas
-        self.canvas = Canvas(eCard, width = 592, height = 420)
+        self.canvas = Canvas(eCard, width = 592, height = 420) # Canvas size of standard postcard dimensions
         self.canvas.pack()
 
         # Images must be initialized in 'init' to be called in functions
         ##self.testPhoto = PhotoImage(file = 'Test.gif')  # Placeholder for image files (can be GIF and PGM/PPM)
-
-        # Buttons in frame
-        frame = Frame(eCard)
-        frame.pack()
 
 
 mainloop()
