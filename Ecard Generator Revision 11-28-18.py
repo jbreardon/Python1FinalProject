@@ -55,97 +55,107 @@ class Ecard:
         print("Its Christmas")
         eCard = Toplevel()  # Create window
         eCard.title("E-Card Generator") # Window title
-        choice = randint(1,3)
+        choice = randint(1,3) # Random variabel between 1 and 3 to choose which image is displayed
 
         # Set canvas
         self.canvas = Canvas(eCard, width = 592, height = 420)
         self.canvas.pack()
+
+        # If statement to check the random choice to display image
         if choice == 1:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Christmas.gif')
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW)
+            self.anniversaryEcard = PhotoImage(file = './gif images/Christmas.gif') # initializing image
+            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
         elif choice == 2:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Christmas2.gif')
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW)
+            self.anniversaryEcard = PhotoImage(file = './gif images/Christmas2.gif') # initializing image
+            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
         elif choice == 3:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Christmas3.gif')
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW)
+            self.anniversaryEcard = PhotoImage(file = './gif images/Christmas3.gif') # initializing image
+            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
 
 
     def valentines(self):
         print("Its Valentines Day")
         eCard = Toplevel()  # Create window
         eCard.title("E-Card Generator") # Window title
-        choice = randint(1,3)
+        choice = randint(1,3) # Random variabel between 1 and 3 to choose which image is displayed
 
         # Set canvas
         self.canvas = Canvas(eCard, width = 592, height = 420)
         self.canvas.pack()
+
+        # If statement to check the random choice to display image
         if choice == 1:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Valentines.gif')
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW)
+            self.anniversaryEcard = PhotoImage(file = './gif images/Valentines.gif') # initializing image
+            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
         elif choice == 2:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Valentines2.gif')
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW)
+            self.anniversaryEcard = PhotoImage(file = './gif images/Valentines2.gif') # initializing image
+            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
         elif choice == 3:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Valentines3.gif')
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW)
+            self.anniversaryEcard = PhotoImage(file = './gif images/Valentines3.gif') # initializing image
+            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
 
     def birthday(self):
         print("Its Your Birthday")
         eCard = Toplevel()  # Create window
         eCard.title("E-Card Generator") # Window title
-        choice = randint(1,3)
+        choice = randint(1,3) # Random variabel between 1 and 3 to choose which image is displayed
 
         # Set canvas
         self.canvas = Canvas(eCard, width = 592, height = 420)
         self.canvas.pack()
+
+        # If statement to check the random choice to display image
         if choice == 1:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Birthday.gif')
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW)
+            self.anniversaryEcard = PhotoImage(file = './gif images/Birthday.gif') # initializing image
+            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
         elif choice == 2:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Birthday2.gif')
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW)
+            self.anniversaryEcard = PhotoImage(file = './gif images/Birthday2.gif') # initializing image
+            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
         elif choice == 3:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Birthday3.gif')
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW)
+            self.anniversaryEcard = PhotoImage(file = './gif images/Birthday3.gif') # initializing image
+            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
 
     def congratulations(self):
         print("Congrats!")
         eCard = Toplevel()  # Create window
         eCard.title("E-Card Generator") # Window title
-        choice = randint(1,3)
+        choice = randint(1,3) # Random variabel between 1 and 3 to choose which image is displayed
 
         # Set canvas
         self.canvas = Canvas(eCard, width = 592, height = 420)
         self.canvas.pack()
+
+        # If statement to check the random choice to display image
         if choice == 1:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Congratulations.gif')
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW)
+            self.anniversaryEcard = PhotoImage(file = './gif images/Congratulations.gif') # initializing image
+            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
         elif choice == 2:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Congratulations2.gif')
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW)
+            self.anniversaryEcard = PhotoImage(file = './gif images/Congratulations2.gif') # initializing image
+            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
         elif choice == 3:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Congratulations3.gif')
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW)
+            self.anniversaryEcard = PhotoImage(file = './gif images/Congratulations3.gif') # initializing image
+            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
 
     def anniversary(self):
         print("Happy Anniversary")
         eCard = Toplevel()  # Create window
         eCard.title("E-Card Generator") # Window title
-        choice = randint(1,3)
+        choice = randint(1,3) # Random variabel between 1 and 3 to choose which image is displayed
 
         # Set canvas
         self.canvas = Canvas(eCard, width = 592, height = 420)
         self.canvas.pack()
+
+        # If statement to check the random choice to display image
         if choice == 1:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Anniversary.gif')
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW)
+            self.anniversaryEcard = PhotoImage(file = './gif images/Anniversary.gif') # initializing image
+            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
         elif choice == 2:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Anniversary2.gif')
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW)
+            self.anniversaryEcard = PhotoImage(file = './gif images/Anniversary2.gif') # initializing image
+            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
         elif choice == 3:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Anniversary3.gif')
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW)
+            self.anniversaryEcard = PhotoImage(file = './gif images/Anniversary3.gif') # initializing image
+            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
 
 
 Ecard()
