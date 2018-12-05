@@ -4,7 +4,8 @@
 
 from tkinter import *
 from random import *
-from shutil import copyfile
+from shutil import *
+import os
 
 
 class Ecard:
@@ -26,6 +27,12 @@ class Ecard:
         occasions = OptionMenu(window, self.selection, *choices).place(x=90, y=30)
 
         button = Button(window, text="OK", command=self.getSelection).place(x=125, y=65)
+
+        # Move Generated .gif files to Generated_Gifs directory
+        for file in os.listdir("./"):
+            if file.endswith(".gif"):
+                print(os.path.join("./", file))
+                move(file, './Generated_Gifs/')
 
         # Set image variables
         self.Christmas1 = './gif images/Christmas.gif'
