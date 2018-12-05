@@ -71,24 +71,30 @@ class Ecard:
     #one written it shoud just be copy, paste, and adjust names.  This is where we could use the code for the canvas that
     #Zakary has written.
 
+    def file_name(self):
+        # Get Save Name from Entry Field
+        self.input = self.saveName.get()
+        return self.input
+
     def file_save(self, x):
-        copyfile(x, './GeneratedEcard.gif')
+        print(x, self.file_name())
+        copyfile(x, './'+self.file_name()+'.gif')
+        self.eCard.destroy()
 
     def christmas(self):
         print("Its Christmas")
-        eCard = Toplevel()  # Create window
-        eCard.title("E-Card Generator") # Window title
+        self.eCard = Toplevel()  # Create window
+        self.eCard.title("E-Card Generator") # Window title
         choice = randint(1,3) # Random variabel between 1 and 3 to choose which image is displayed
+        imageChoice = '' # Image choice variable
 
         # Set canvas
-        self.canvas = Canvas(eCard, width = 592, height = 420)
+        self.canvas = Canvas(self.eCard, width = 592, height = 420)
         self.canvas.pack()
 
         # Set Frame
-        frame = Frame(eCard)
+        frame = Frame(self.eCard)
         frame.pack()
-
-        imageChoice = ''
 
         # If statement to check the random choice to display image
         if choice == 1:
@@ -101,11 +107,15 @@ class Ecard:
         self.ecardImage = PhotoImage(file = imageChoice) # initializing image
         self.canvas.create_image(0, 0, image = self.ecardImage, anchor = NW) # display image
 
+        # Save Name Label
+        label = Label(frame, text="Save file as: ")
+        label.grid(column=2, row=0)
+        # Save Name Entry Field
+        self.saveName = Entry(frame)
+        self.saveName.grid(column=3, row=0)
         # Save Button
-        saveButton = Button(frame, text="Save", command=self.file_save(imageChoice))
+        saveButton = Button(frame, text="Save", command=lambda : self.file_save(imageChoice))
         saveButton.grid(column=4, row=0)
-
-
 
     def valentines(self):
         print("Its Valentines Day")
@@ -134,8 +144,14 @@ class Ecard:
         self.ecardImage = PhotoImage(file = imageChoice) # initializing image
         self.canvas.create_image(0, 0, image = self.ecardImage, anchor = NW) # display image
 
+        # Save Name Label
+        label = Label(frame, text="Save file as: ")
+        label.grid(column=2, row=0)
+        # Save Name Entry Field
+        self.saveName = Entry(frame)
+        self.saveName.grid(column=3, row=0)
         # Save Button
-        saveButton = Button(frame, text="Save", command=self.file_save(imageChoice))
+        saveButton = Button(frame, text="Save", command=lambda : self.file_save(imageChoice))
         saveButton.grid(column=4, row=0)
 
     def birthday(self):
@@ -165,8 +181,14 @@ class Ecard:
         self.ecardImage = PhotoImage(file = imageChoice) # initializing image
         self.canvas.create_image(0, 0, image = self.ecardImage, anchor = NW) # display image
 
+        # Save Name Label
+        label = Label(frame, text="Save file as: ")
+        label.grid(column=2, row=0)
+        # Save Name Entry Field
+        self.saveName = Entry(frame)
+        self.saveName.grid(column=3, row=0)
         # Save Button
-        saveButton = Button(frame, text="Save", command=self.file_save(imageChoice))
+        saveButton = Button(frame, text="Save", command=lambda : self.file_save(imageChoice))
         saveButton.grid(column=4, row=0)
 
 
@@ -197,8 +219,14 @@ class Ecard:
         self.ecardImage = PhotoImage(file = imageChoice) # initializing image
         self.canvas.create_image(0, 0, image = self.ecardImage, anchor = NW) # display image
 
+        # Save Name Label
+        label = Label(frame, text="Save file as: ")
+        label.grid(column=2, row=0)
+        # Save Name Entry Field
+        self.saveName = Entry(frame)
+        self.saveName.grid(column=3, row=0)
         # Save Button
-        saveButton = Button(frame, text="Save", command=self.file_save(imageChoice))
+        saveButton = Button(frame, text="Save", command=lambda : self.file_save(imageChoice))
         saveButton.grid(column=4, row=0)
 
     def anniversary(self):
@@ -228,8 +256,14 @@ class Ecard:
         self.ecardImage = PhotoImage(file = imageChoice) # initializing image
         self.canvas.create_image(0, 0, image = self.ecardImage, anchor = NW) # display image
 
+        # Save Name Label
+        label = Label(frame, text="Save file as: ")
+        label.grid(column=2, row=0)
+        # Save Name Entry Field
+        self.saveName = Entry(frame)
+        self.saveName.grid(column=3, row=0)
         # Save Button
-        saveButton = Button(frame, text="Save", command=self.file_save(imageChoice))
+        saveButton = Button(frame, text="Save", command=lambda : self.file_save(imageChoice))
         saveButton.grid(column=4, row=0)
 
 
