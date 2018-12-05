@@ -4,6 +4,7 @@
 
 from tkinter import *
 from random import *
+from shutil import copyfile
 
 
 class Ecard:
@@ -25,6 +26,24 @@ class Ecard:
         occasions = OptionMenu(window, self.selection, *choices).place(x=90, y=30)
 
         button = Button(window, text="OK", command=self.getSelection).place(x=125, y=65)
+
+        # Set image variables
+        self.Christmas1 = './gif images/Christmas.gif'
+        self.Christmas2 = './gif images/Christmas2.gif'
+        self.Christmas3 = './gif images/Christmas3.gif'
+        self.Valentines1 = './gif images/Valentines.gif'
+        self.Valentines2 = './gif images/Valentines2.gif'
+        self.Valentines3 = './gif images/Valentines3.gif'
+        self.Birthday1 = './gif images/Birthday.gif'
+        self.Birthday2 = './gif images/Birthday2.gif'
+        self.Birthday3 = './gif images/Birthday3.gif'
+        self.Congratulations1 = './gif images/Congratulations.gif'
+        self.Congratulations2 = './gif images/Congratulations2.gif'
+        self.Congratulations3 = './gif images/Congratulations3.gif'
+        self.Anniversary1 = './gif images/Anniversary.gif'
+        self.Anniversary2 = './gif images/Anniversary2.gif'
+        self.Anniversary3 = './gif images/Anniversary3.gif'
+
 
         mainloop()
 
@@ -51,6 +70,10 @@ class Ecard:
     #select one or we could have it display a canvas with however many options we decide and let them select.  Once we get
     #one written it shoud just be copy, paste, and adjust names.  This is where we could use the code for the canvas that
     #Zakary has written.
+
+    def file_save(self, x):
+        copyfile(x, './GeneratedEcard.gif')
+
     def christmas(self):
         print("Its Christmas")
         eCard = Toplevel()  # Create window
@@ -61,16 +84,27 @@ class Ecard:
         self.canvas = Canvas(eCard, width = 592, height = 420)
         self.canvas.pack()
 
+        # Set Frame
+        frame = Frame(eCard)
+        frame.pack()
+
+        imageChoice = ''
+
         # If statement to check the random choice to display image
         if choice == 1:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Christmas.gif') # initializing image
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
+            imageChoice = self.Christmas1
         elif choice == 2:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Christmas2.gif') # initializing image
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
+            imageChoice = self.Christmas2
         elif choice == 3:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Christmas3.gif') # initializing image
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
+            imageChoice = self.Christmas3
+
+        self.ecardImage = PhotoImage(file = imageChoice) # initializing image
+        self.canvas.create_image(0, 0, image = self.ecardImage, anchor = NW) # display image
+
+        # Save Button
+        saveButton = Button(frame, text="Save", command=self.file_save(imageChoice))
+        saveButton.grid(column=4, row=0)
+
 
 
     def valentines(self):
@@ -83,16 +117,26 @@ class Ecard:
         self.canvas = Canvas(eCard, width = 592, height = 420)
         self.canvas.pack()
 
+        # Set Frame
+        frame = Frame(eCard)
+        frame.pack()
+
+        imageChoice = ''
+
         # If statement to check the random choice to display image
         if choice == 1:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Valentines.gif') # initializing image
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
+            imageChoice = self.Valentines1
         elif choice == 2:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Valentines2.gif') # initializing image
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
+            imageChoice = self.Valentines2
         elif choice == 3:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Valentines3.gif') # initializing image
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
+            imageChoice = self.Valentines3
+
+        self.ecardImage = PhotoImage(file = imageChoice) # initializing image
+        self.canvas.create_image(0, 0, image = self.ecardImage, anchor = NW) # display image
+
+        # Save Button
+        saveButton = Button(frame, text="Save", command=self.file_save(imageChoice))
+        saveButton.grid(column=4, row=0)
 
     def birthday(self):
         print("Its Your Birthday")
@@ -104,16 +148,27 @@ class Ecard:
         self.canvas = Canvas(eCard, width = 592, height = 420)
         self.canvas.pack()
 
+        # Set Frame
+        frame = Frame(eCard)
+        frame.pack()
+
+        imageChoice = ''
+
         # If statement to check the random choice to display image
         if choice == 1:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Birthday.gif') # initializing image
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
+            imageChoice = self.Birthday1
         elif choice == 2:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Birthday2.gif') # initializing image
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
+            imageChoice = self.Birthday2
         elif choice == 3:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Birthday3.gif') # initializing image
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
+            imageChoice = self.Birthday3
+
+        self.ecardImage = PhotoImage(file = imageChoice) # initializing image
+        self.canvas.create_image(0, 0, image = self.ecardImage, anchor = NW) # display image
+
+        # Save Button
+        saveButton = Button(frame, text="Save", command=self.file_save(imageChoice))
+        saveButton.grid(column=4, row=0)
+
 
     def congratulations(self):
         print("Congrats!")
@@ -125,16 +180,26 @@ class Ecard:
         self.canvas = Canvas(eCard, width = 592, height = 420)
         self.canvas.pack()
 
+        # Set Frame
+        frame = Frame(eCard)
+        frame.pack()
+
+        imageChoice = ''
+
         # If statement to check the random choice to display image
         if choice == 1:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Congratulations.gif') # initializing image
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
+            imageChoice = self.Congratulations1
         elif choice == 2:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Congratulations2.gif') # initializing image
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
+            imageChoice = self.Congratulations2
         elif choice == 3:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Congratulations3.gif') # initializing image
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
+            imageChoice = self.Congratulations3
+
+        self.ecardImage = PhotoImage(file = imageChoice) # initializing image
+        self.canvas.create_image(0, 0, image = self.ecardImage, anchor = NW) # display image
+
+        # Save Button
+        saveButton = Button(frame, text="Save", command=self.file_save(imageChoice))
+        saveButton.grid(column=4, row=0)
 
     def anniversary(self):
         print("Happy Anniversary")
@@ -146,16 +211,26 @@ class Ecard:
         self.canvas = Canvas(eCard, width = 592, height = 420)
         self.canvas.pack()
 
+        # Set Frame
+        frame = Frame(eCard)
+        frame.pack()
+
+        imageChoice = ''
+
         # If statement to check the random choice to display image
         if choice == 1:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Anniversary.gif') # initializing image
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
+            imageChoice = self.Anniversary1
         elif choice == 2:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Anniversary2.gif') # initializing image
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
+            imageChoice = self.Anniversary2
         elif choice == 3:
-            self.anniversaryEcard = PhotoImage(file = './gif images/Anniversary3.gif') # initializing image
-            self.canvas.create_image(0, 0, image = self.anniversaryEcard, anchor = NW) # display image
+            imageChoice = self.Anniversary3
+
+        self.ecardImage = PhotoImage(file = imageChoice) # initializing image
+        self.canvas.create_image(0, 0, image = self.ecardImage, anchor = NW) # display image
+
+        # Save Button
+        saveButton = Button(frame, text="Save", command=self.file_save(imageChoice))
+        saveButton.grid(column=4, row=0)
 
 
 Ecard()
