@@ -8,6 +8,7 @@ from shutil import *
 import os
 
 
+
 class Ecard:
     def __init__(self):
         # List of available occasions
@@ -28,11 +29,6 @@ class Ecard:
 
         button = Button(window, text="OK", command=self.getSelection).place(x=125, y=65)
 
-        # Move Generated .gif files to Generated_Gifs directory
-        for file in os.listdir("./"):
-            if file.endswith(".gif"):
-                print(os.path.join("./", file))
-                move(file, './Generated_Gifs/')
 
         # Set image variables
         self.Christmas1 = './gif images/Christmas.gif'
@@ -50,6 +46,8 @@ class Ecard:
         self.Anniversary1 = './gif images/Anniversary.gif'
         self.Anniversary2 = './gif images/Anniversary2.gif'
         self.Anniversary3 = './gif images/Anniversary3.gif'
+
+        self.move_files()
 
 
         mainloop()
@@ -78,6 +76,14 @@ class Ecard:
     #one written it shoud just be copy, paste, and adjust names.  This is where we could use the code for the canvas that
     #Zakary has written.
 
+    def move_files(self):
+        # Move Generated .gif files to Generated_Gifs directory
+        for file in os.listdir("./"):
+            if file.endswith(".pdf"):
+                print("Moving file: " + os.path.join("./", file))
+                move(file, './Generated_PDFs/')
+
+
     def file_name(self):
         # Get Save Name from Entry Field
         self.input = self.saveName.get()
@@ -85,8 +91,9 @@ class Ecard:
 
     def file_save(self, x):
         print(x, self.file_name())
-        copyfile(x, './'+self.file_name()+'.gif')
+        copyfile(x, './'+self.file_name()+'.pdf')
         self.eCard.destroy()
+        self.move_files()
 
     def christmas(self):
         print("Its Christmas")
@@ -126,16 +133,16 @@ class Ecard:
 
     def valentines(self):
         print("Its Valentines Day")
-        eCard = Toplevel()  # Create window
-        eCard.title("E-Card Generator") # Window title
+        self.eCard = Toplevel()  # Create window
+        self.eCard.title("E-Card Generator") # Window title
         choice = randint(1,3) # Random variabel between 1 and 3 to choose which image is displayed
 
         # Set canvas
-        self.canvas = Canvas(eCard, width = 592, height = 420)
+        self.canvas = Canvas(self.eCard, width = 592, height = 420)
         self.canvas.pack()
 
         # Set Frame
-        frame = Frame(eCard)
+        frame = Frame(self.eCard)
         frame.pack()
 
         imageChoice = ''
@@ -163,16 +170,16 @@ class Ecard:
 
     def birthday(self):
         print("Its Your Birthday")
-        eCard = Toplevel()  # Create window
-        eCard.title("E-Card Generator") # Window title
+        self.eCard = Toplevel()  # Create window
+        self.eCard.title("E-Card Generator") # Window title
         choice = randint(1,3) # Random variabel between 1 and 3 to choose which image is displayed
 
         # Set canvas
-        self.canvas = Canvas(eCard, width = 592, height = 420)
+        self.canvas = Canvas(self.eCard, width = 592, height = 420)
         self.canvas.pack()
 
         # Set Frame
-        frame = Frame(eCard)
+        frame = Frame(self.eCard)
         frame.pack()
 
         imageChoice = ''
@@ -201,16 +208,16 @@ class Ecard:
 
     def congratulations(self):
         print("Congrats!")
-        eCard = Toplevel()  # Create window
-        eCard.title("E-Card Generator") # Window title
+        self.eCard = Toplevel()  # Create window
+        self.eCard.title("E-Card Generator") # Window title
         choice = randint(1,3) # Random variabel between 1 and 3 to choose which image is displayed
 
         # Set canvas
-        self.canvas = Canvas(eCard, width = 592, height = 420)
+        self.canvas = Canvas(self.eCard, width = 592, height = 420)
         self.canvas.pack()
 
         # Set Frame
-        frame = Frame(eCard)
+        frame = Frame(self.eCard)
         frame.pack()
 
         imageChoice = ''
@@ -238,16 +245,16 @@ class Ecard:
 
     def anniversary(self):
         print("Happy Anniversary")
-        eCard = Toplevel()  # Create window
-        eCard.title("E-Card Generator") # Window title
+        self.eCard = Toplevel()  # Create window
+        self.eCard.title("E-Card Generator") # Window title
         choice = randint(1,3) # Random variabel between 1 and 3 to choose which image is displayed
 
         # Set canvas
-        self.canvas = Canvas(eCard, width = 592, height = 420)
+        self.canvas = Canvas(self.eCard, width = 592, height = 420)
         self.canvas.pack()
 
         # Set Frame
-        frame = Frame(eCard)
+        frame = Frame(self.eCard)
         frame.pack()
 
         imageChoice = ''
